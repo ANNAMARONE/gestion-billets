@@ -25,6 +25,8 @@ $db= new create();
         $email = $_POST['email'];
         $numero_passport = $_POST['numeropassport'];
         $db->create($nom,$prenom,$adresse,$email, $numero_passport);
+        header('location:read.php');
+        exit();
         if (empty($nom) || empty($prenom) || empty($email) || empty($adresse) || empty($numero_passport)) {
           echo "**Veuillez remplir tous les champs.**";
           exit;
