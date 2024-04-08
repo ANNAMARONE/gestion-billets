@@ -1,70 +1,32 @@
+
 <?php
 require_once("config.php");
+require_once("Billet.php");
 
-class ReservationBillet {
-    private $conn;
-
-    public function __construct($conn) {
-        $this->conn = $conn;
-    }
-
-    public function getAvailableBillets() {
-        try {
-            $stmt = $this->conn->query("SELECT * FROM billet");
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch(PDOException $e) {
-            echo "Erreur de connexion : " . $e->getMessage();
-            return false;
-        }
-    }
-
-    public function reserverBillet($billet_id) {
-        try {
-            $stmt = $this->conn->prepare("UPDATE billet SET statut = 'Réservé' WHERE id_billet = :billet_id");
-            $stmt->bindParam(':billet_id', $billet_id);
-            $stmt->execute();
-            header("Location: confirmation_reservation.php?billet_id=" . $billet_id);
-            exit;
-        } catch(PDOException $e) {
-            echo "Erreur : " . $e->getMessage();
-        }
-    }
-}
-
-$reservationBillet = new ReservationBillet($conn);
-
-$billets = $reservationBillet->getAvailableBillets();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(isset($_POST['action']) && isset($_POST['billet_id'])) {
-        $action = $_POST['action'];
-        $billet_id = $_POST['billet_id'];
-        
-        if ($action == 'reservation') {
-            $reservationBillet->reserverBillet($billet_id);
-        }
-    } else {
-        echo "Erreur : Action ou identifiant de billet non spécifié.";
-    }
-}
+$billetObj = new Billet($conn);
+$billets = $billetObj->readAll();
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Réservation de billets de voyage</title>
     <link rel="stylesheet" href="style.css">
+    <title>Réservation de billets de voyage</title>
 </head>
 <body>
-    <header>
+<header>
         <div class="contain_logo"></div>
         <nav>
             <ul>
                 <li><a href="index.php">Accueil</a></li>
-                <li><a href="reservation.php">Réservation</a></li>
+                <li><a href="create.php">Réservation</a></li>
+            
             </ul>
         </nav>
+        <div class="connect-button">
+            <a href="login.php"><button>Se connecter</button></a>
+        </div>
     </header>
 
     <section class="billets">
@@ -72,11 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="billets-container">
             <?php foreach ($billets as $billet) : ?>
                 <div class="billet-item">
-                    <?php echo $billet['destination'] . ' - ' . $billet['date'] . ' ' . $billet['heure'] . ' (' . $billet['prix'] . '€)'; ?>
-                    <form class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <input type="hidden" name="billet_id" value="<?php echo $billet['id_billet']; ?>">
-                        <button type="submit" name="action" value="reservation">Réserver</button>
-                    </form>
+                    <?php echo $billet['destination'] . ' - ' . $billet['date_reservation'] . ' ' . $billet['heure_reservation'] . ' (' . $billet['prix'] . '€)'; ?>
+                    <a href="delete_billet.php?id=<?php echo $billet['id']; ?>">Supprimer</a>
                 </div>
             <?php endforeach; ?>
         </div>

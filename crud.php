@@ -1,8 +1,9 @@
-<?php   
+<?php
 interface Crud {
-    public function create();
+    public function create($data);
     public function read();
-    public function update($id);
+    public function update($id, $data);
     public function delete($id);
 }
+
 ?>
