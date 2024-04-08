@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #3f37c9;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+header .contain_logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff; 
+    margin-right: 20px;
+    background-image: url("img/logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.connect-button {
+    margin-left: auto;
+}
+
+.connect-button button {
+    background-color: #f77f00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.connect-button button:hover {
+    background-color: #f77f00;
+}
+
+section {
+    padding: 20px;
+}
+
+.billets-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.billet-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: calc(33.33% - 20px); 
+}
+
+.billet-item h2 {
+    margin-top: 0;
+}
+
+form {
+    margin-top: 20px;
+    width: 50%;
+    height: 300px;
+    background-color: #3e37c925;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #f77f00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f77f00;
+}
+
+button:focus {
+    outline: none;
+}
+
+footer {
+    background-color: #3f37c9;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+/* Style de la section d'accueil */
+.acceuil_img {
+    background-image: url('img/travel.png'); 
+    background-size: cover;
+    height: 400px; 
+}
+
+.title {
+    text-align: center;
+    color: #fff; 
+    padding-top: 150px; 
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.destination-box {
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.destination-box:hover {
+    transform: translateY(-5px);
+}
+
+.destination-box img {
+    width: 100%;
+    height: auto;
+}
+
+.destination-info {
+    padding: 10px;
+}
+
+.destination-info h3 {
+    margin-bottom: 5px;
+}
+
+.destination-info p {
+    margin: 0;
+}
+
+.billet-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.billet {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: calc(25% - 20px); 
+    box-sizing: border-box; 
+}
+
+.billet h2 {
+    margin-top: 0;
+}
+
+.billet p {
+    margin-bottom: 5px;
+}
+
+.billet a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.billet a:hover {
+    text-decoration: underline;
+}
+
+
+.modify-button, .cancel-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f77f00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.modify-button:hover, .cancel-button:hover {
+    background-color: #0056b3;
+}
+
+.modify-button:focus, .cancel-button:focus {
+    outline: none;
+}
+
+.modify-button:active, .cancel-button:active {
+    background-color: #0056b3;
+    transform: translateY(1px);
+}
