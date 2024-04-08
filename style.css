@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body{
+  background-image: url(R.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    width: 90%;
+  }
+  
+  .btn-primary {
+    background-color: #337ab7;
+    border-color: #337ab7;
+  }
+  /* Style général */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Formulaire */
+  
+  .container {
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    background-color: rgba(211, 208, 208, 0.76);
+    margin-top: 7%;
+  }
+    
+  .form-control {
+    width: 20%;
+    padding: 10px;
+    height: 50px;
+    border-radius: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    margin-left: 20%;
+    
+  }
+  
+  .form-control {
+    padding: 10px;
+    width: 70%;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .form-control:focus {
+    border-color: #337ab7;
+  }
+  
+  .btn-primary {
+    background-color: #337ab7;
+    border-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #286090;
+  }
+  * {
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  /* On modernise notre balise de navigation avec une petite ombre. On mets tous les éléments du menu les uns bien à côté des autres avec flexbox (display: flex) */
+  nav {
+    background-color: #fff;
+    padding: 0 20px;
+    border-radius: 40px;
+    box-shadow: 0 5px 40px rgba(159, 162, 177, .8);
+    display: flex;
+    overflow: hidden;
+    overflow-x: auto;
+    position: relative;
+  
+  }
+  
+  /* On stylise chaque élément */
+  .nav-item {
+    color: #83818c;
+    font-family: arial, sans-serif;
+    padding: 20px;
+    margin: 0 6px;
+    position: relative;
+   
+  }
+  
+  /* Ici on met juste un petit élément avant chaque élément pour le rendre plus beau visuellement */
+  .nav-item:before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    background-color: #dfe2ea;
+    height: 5px;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    left: 0;
+    transition: .3s;
+  }
+  
+  /* Avec les dernières nouveautés de CSS, on peut changer les propriétés des éléments selon des conditions avec not */
+  .nav-item:not(.is-active):hover:before {
+    bottom: 0;
+  }
+  .nav-item:not(.is-active):hover {
+    color: #333;
+  }
+  
+  /* Stylisons notre indicateur */
+  .nav-indicator {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    transition: .4s;
+    border-radius: 8px 8px 0 0;
+  }
+  .dates{
+   
+    margin-left: 5%;
+    padding: 20px;
+    width: 90%;
+    justify-content: space-between;
+  }
+  .dates input{
+    width: 90%;
+    margin: 10px;
+  }
+  .form-wrap{
+    margin-top: 5%;
+  }
+  .form-wrap4{
+    padding: 8px;
+    width: 15rem;
+    border-radius: 20px;
+  }
+  .from-group2{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+   
+  }
+  .form-group5{
+    margin: 30px;
+    margin-left: 20%;
+  }
+  .form-groupvol input{
+    width: 50%;
+    margin: 10px;
+  }
+  
+  /* Responsive */
+  
+  @media (max-width: 768px) {
+    .form-container {
+      width: 100%;
+    }
+  }
+  
+  
+  
