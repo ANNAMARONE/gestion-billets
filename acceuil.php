@@ -22,16 +22,10 @@
     </header>
 
     <section  class="acceuil_img"></section>
-    <h1>Decouvrez nos differentes destinations</h1>
+    <h1 class="title">Decouvrez nos differentes destinations</h1>
     <section class="section">
     
-        <div class="destination-box">
-            <img src="img/image1.png" alt="Londre">
-            <div class="destination-info">
-                <h3>Londre</h3>
-                <p>Prix:150$</p>
-            </div>
-        </div>
+        
 
         <div class="destination-box">
             <img src="img/image2(1).jpeg" alt="New York">

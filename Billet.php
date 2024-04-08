@@ -1,5 +1,5 @@
 <?php
-// Billet.php
+
 require_once("config.php");
 
 class Billet {
