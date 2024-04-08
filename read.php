@@ -77,7 +77,7 @@ public function totalRowcount(){
                                     $output.= '<td>' . $row['email'] . '</td>';
                                     $output.= '<td>' . $row['numeropassport'] . '</td>';
                                     $output.='<td>';
-                  $output.='<a href="read.php?id='. $row['id'] .'" class="me-3" ><span class="bi bi-eye"></span></a>';
+                  $output.='<a href="detail.php?id='. $row['id'] .'" class="me-3" ><span class="bi bi-eye"></span></a>';
                   $output.=' <a href="update.php?id='. $row['id'] .'" class="me-3" ><span class="bi bi-pencil"></span></a>';
                   $output.='<a href="delete.php?id='. $row['id'] .'" ><span class="bi bi-trash"></span></a>';
                     $output.= '</td>';
